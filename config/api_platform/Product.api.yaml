@@ -2,6 +2,14 @@ App\Entity\Product:
   itemOperations:
     get: ~
 
+    delete: ~
+
+    patch:
+      denormalization_context:
+        groups: ["product:write", "money:write"]
+      normalization_context:
+        groups: ["product:read", "money:read"]
+
   collectionOperations:
     create:
       method: POST
