@@ -1,0 +1,6 @@
+App\Entity\Money:
+  attributes:
+    cents:
+      groups: ["money:read", "money:write"]
+    currency:
+      groups: ["money:read", "money:write"]

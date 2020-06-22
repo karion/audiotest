@@ -1,0 +1,12 @@
+App\Entity\Product:
+  itemOperations:
+    get: ~
+
+  collectionOperations:
+    create:
+      method: POST
+      denormalization_context:
+        groups: ["product:write", "money:write"]
+      normalization_context:
+        groups: ["product:read", "money:read"]
+    get: ~
