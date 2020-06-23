@@ -18,6 +18,7 @@ services:
       - .:/app
     expose:
       - "9000"
+    user: 1000:1000
 
   mariadb:
     image: mariadb:10.4

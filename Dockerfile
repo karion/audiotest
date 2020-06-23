@@ -24,6 +24,9 @@ RUN echo "memory_limit = -1" >> /usr/local/etc/php/conf.d/docker-php-memlimit.in
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN chmod +x /usr/local/bin/composer
 
+RUN adduser --system --group --shell /bin/sh user
+USER user
+
 RUN mkdir -p $PROJECT_PATH
 WORKDIR $PROJECT_PATH
 
