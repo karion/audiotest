@@ -1,5 +1,7 @@
 App\Entity\Product:
   attributes:
+    id:
+      groups: ["product:read"]
     name:
       groups: ["product:read", "product:write"]
     price:

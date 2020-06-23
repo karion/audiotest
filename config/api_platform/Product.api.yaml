@@ -8,9 +8,12 @@ App\Entity\Product:
 
   itemOperations:
     get: ~
-    delete: ~
-    patch: ~
+    delete:
+      security: is_granted('ROLE_ADMIN')
+    patch:
+      security: is_granted('ROLE_ADMIN')
 
   collectionOperations:
-    post: ~
+    post:
+      security: is_granted('ROLE_ADMIN')
     get: ~

@@ -4,13 +4,17 @@ App\Entity\Cart:
     denormalization_context:
       groups: ["cart:write"]
     normalization_context:
-      groups: ["cart:read", "product:read", "money:read"]
+      groups: ["cart:read", "product:read", "money:read", "user:read"]
+    security: "is_granted('ROLE_ADMIN') or object.user == user"
 
   itemOperations:
     get: ~
     delete: ~
-    patch: ~
+    patch:
+      security: "object.user == user"
 
   collectionOperations:
-    post: ~
+    post:
+      security: false
+      security_post_denormalize: "object.user == user"
     get: ~

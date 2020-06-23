@@ -1,0 +1,8 @@
+App\Entity\Cart:
+  attributes:
+    id:
+      groups: ["cart:read"]
+    user:
+      groups: ["cart:read", "cart:write"]
+    products:
+      groups: ["cart:read", "cart:write"]
