@@ -1,0 +1,16 @@
+App\Entity\Cart:
+  attributes:
+    pagination_items_per_page: 3
+    denormalization_context:
+      groups: ["cart:write"]
+    normalization_context:
+      groups: ["cart:read", "product:read", "money:read"]
+
+  itemOperations:
+    get: ~
+    delete: ~
+    patch: ~
+
+  collectionOperations:
+    post: ~
+    get: ~

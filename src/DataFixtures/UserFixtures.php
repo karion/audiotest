@@ -13,6 +13,7 @@ class UserFixtures extends Fixture
         $user = new User();
         $user
             ->setEmail('toamsz.szymczyk+audio@karion.net.pl')
+            // password1
             ->setPassword('$argon2id$v=19$m=65536,t=4,p=1$0Q1KeqXf04Lna/Trdn78cw$+Bu2Bjra6CU2oSZ4GfUr4FvMLxWdKuPPa3sBSQUoovc')
             ->setRoles(['ROLE_USER', 'ROLE_ADMIN'])
         ;
