@@ -1,20 +1,16 @@
 App\Entity\Product:
+  attributes:
+    pagination_items_per_page: 3
+    denormalization_context:
+      groups: ["product:write", "money:write"]
+    normalization_context:
+      groups: ["product:read", "money:read"]
+
   itemOperations:
     get: ~
-
     delete: ~
-
-    patch:
-      denormalization_context:
-        groups: ["product:write", "money:write"]
-      normalization_context:
-        groups: ["product:read", "money:read"]
+    patch: ~
 
   collectionOperations:
-    create:
-      method: POST
-      denormalization_context:
-        groups: ["product:write", "money:write"]
-      normalization_context:
-        groups: ["product:read", "money:read"]
+    post: ~
     get: ~
