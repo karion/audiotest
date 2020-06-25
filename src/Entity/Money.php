@@ -13,15 +13,18 @@ class Money
     const CURRENCY_EUR = 'EUR';
     const CURRENCY_USD = 'USD';
 
-    public static $allowedCurrency = [
-        self::CURRENCY_PLN,
-        self::CURRENCY_EUR,
-        self::CURRENCY_USD,
-    ];
+    public static function allowedCurrency()
+    {
+        return [
+            self::CURRENCY_PLN,
+            self::CURRENCY_EUR,
+            self::CURRENCY_USD,
+        ];
+    }
 
     /**
-     * @var string
-     * @ORM\Column(type="string")
+     * @var integer
+     * @ORM\Column(type="integer")
      */
     private $cents = 0;
 
@@ -39,7 +42,7 @@ class Money
 
     public function setCents(int $cents): self
     {
-        $this->cents = (string)$cents;
+        $this->cents = $cents;
 
         return $this;
     }

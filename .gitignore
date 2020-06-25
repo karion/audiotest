@@ -21,3 +21,5 @@
 
 /docker/*
 !/docker/nginx/nginx.conf
+
+/.idea/

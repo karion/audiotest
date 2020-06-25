@@ -1,0 +1,7 @@
+App\Entity\Money:
+    properties:
+         cents:
+           - PositiveOrZero: ~
+         currency:
+           - Choice: {callback: allowedCurrency}
+           - NotBlank: ~

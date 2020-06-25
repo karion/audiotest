@@ -1,0 +1,9 @@
+App\Entity\Cart:
+    properties:
+        user:
+            - NotBlank: ~
+            - Valid: ~
+        products:
+            - Count:
+                  max: 3
+            - Valid: ~

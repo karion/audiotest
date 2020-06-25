@@ -1,0 +1,10 @@
+App\Entity\Product:
+    properties:
+        name:
+            - NotBlank: ~
+        price:
+            - Valid: ~
+            - Type: App\Entity\Money
+
+
+

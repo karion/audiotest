@@ -5,7 +5,7 @@ App\Entity\Cart:
       groups: ["cart:write"]
     normalization_context:
       groups: ["cart:read", "product:read", "money:read", "user:read"]
-    security: "is_granted('ROLE_ADMIN') or object.user == user"
+    security: 'is_granted("ROLE_ADMIN") or object.getUser() == user'
 
   itemOperations:
     get: ~
@@ -13,8 +13,30 @@ App\Entity\Cart:
     patch:
       security: "object.user == user"
 
+    addProduct:
+      method: POST
+      path: /carts/{id}/products/{productId}
+      controller: App\Controller\Cart\CartAddProductAction
+      denormalization_context:
+        groups: ~
+      input: false
+      write: false
+    deleteProduct:
+      method: DELETE
+      status: 200
+      path: /carts/{id}/products/{productId}
+      controller: App\Controller\Cart\CartDeleteProductAction
+      denormalization_context:
+        groups: ~
+      input: false
+      write: false
+
   collectionOperations:
     post:
-      security: false
-      security_post_denormalize: "object.user == user"
+      input: false
+      write: false
+      security: ~
+      security_post_denormalize: ~
+#      "object.getUser() == user"
+      controller: App\Controller\Cart\CartCreateAction
     get: ~
