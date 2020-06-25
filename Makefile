@@ -5,14 +5,9 @@ endef
 
 init:
 	@echo "Initializing project..."
-	@make init-env
 	@make start
 	@make setup
 	@echo "Initialization completed!"
-
-init-env:
-	@echo "Setting up project configuration.."
-	$(call copy_dist_file,.env)
 
 start:
 	@echo "Starting project..."
@@ -26,6 +21,7 @@ setup:
 	@echo "Setup project..."
 	docker exec -it audioteka-php composer install
 	@make migrate
+	@make load-fixtures
 
 migrate:
 	@echo "Migrating database..."
