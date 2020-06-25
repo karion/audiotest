@@ -36,3 +36,11 @@ cache:
 	docker exec -it audioteka-php bin/console cache:clear
 	docker exec -it audioteka-php bin/console c:c --env=test
 	docker exec -it audioteka-php bin/console c:c --env=prod
+
+load-fixtures:
+	@echo "Clearing cache..."
+	docker exec -it audioteka-php bin/console doctrine:fixtures:load -n
+
+test:
+	@echo "Clearing cache..."
+	docker exec -it audioteka-php bin/phpunit
