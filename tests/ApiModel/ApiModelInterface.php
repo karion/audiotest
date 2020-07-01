@@ -15,5 +15,5 @@ interface ApiModelInterface
     const UUID = 'uuid';
     const NULL = 'null';
 
-    public static function getFields(): array;
+    static function getFields(): array;
 }

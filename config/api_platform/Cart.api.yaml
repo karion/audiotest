@@ -35,8 +35,8 @@ App\Entity\Cart:
     post:
       input: false
       write: false
-      security: ~
-      security_post_denormalize: ~
+      security: 'is_granted("IS_AUTHENTICATED_ANONYMOUSLY")'
+      security_post_denormalize: 'is_granted("IS_AUTHENTICATED_ANONYMOUSLY")'
 #      "object.getUser() == user"
       controller: App\Controller\Cart\CartCreateAction
     get: ~
