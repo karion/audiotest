@@ -16,7 +16,7 @@
         "symfony/maker-bundle": "^1.19",
         "symfony/phpunit-bridge": "^5.1",
         "symfony/security-bundle": "5.1.*",
-        "symfony/security-guard": "5.1.*",
+        "symfony/security-guard": "5.2.*",
         "symfony/serializer-pack": "^1.0",
         "symfony/validator": "5.1.*",
         "symfony/yaml": "5.1.*"
